@@ -31,6 +31,12 @@ export default function Home() {
   const contentsImage1Ref = useRef<HTMLImageElement>(null);
   const contentsImage2Ref = useRef<HTMLImageElement>(null);
   const contentsImage3Ref = useRef<HTMLImageElement>(null);
+  const newsImage1Ref = useRef<HTMLImageElement>(null);
+  const newsImage2Ref = useRef<HTMLImageElement>(null);
+  const newsImage3Ref = useRef<HTMLImageElement>(null);
+  const contestCoinImage1Ref = useRef<HTMLImageElement>(null);
+  const contestCoinImage2Ref = useRef<HTMLImageElement>(null);
+  const contestCoinImage3Ref = useRef<HTMLImageElement>(null);
   const reviewImage1Ref = useRef<HTMLDivElement>(null);
   const reviewImage2Ref = useRef<HTMLDivElement>(null);
   const reviewImage3Ref = useRef<HTMLDivElement>(null);
@@ -225,7 +231,7 @@ export default function Home() {
     };
 
     const shortSource = sourceMap[utmSource] || utmSource;
-    const homepageName = "9740페이지";
+    const homepageName = "소상공인_이자";
 
     if (materialId) {
       return `${homepageName}_${shortSource}_소재_${materialId}`;
@@ -367,6 +373,12 @@ export default function Home() {
         contentsImage1Ref.current,
         contentsImage2Ref.current,
         contentsImage3Ref.current,
+        newsImage1Ref.current,
+        newsImage2Ref.current,
+        newsImage3Ref.current,
+        contestCoinImage1Ref.current,
+        contestCoinImage2Ref.current,
+        contestCoinImage3Ref.current,
       ].filter(Boolean);
 
       images.forEach((image) => {
@@ -491,6 +503,84 @@ export default function Home() {
           </>
         )}
       </div>
+      <div ref={contentsSectionRef} className={styles.cotent_new_section}>
+        <div className={styles.news_text_wrapper}>
+          <p className={styles.news_pretext}>2026년 중소벤처기업부 소상공인 예산</p>
+          <p className={styles.news_title}>
+            소상공인 예산 <span className={styles.news_highlight}>“5.4조”</span>
+          </p>
+          <div className={styles.news_badge}>
+            <p className={styles.news_badge_text}>역대 최대규모</p>
+          </div>
+        </div>
+        <div className={styles.news_images_wrapper}>
+          <img
+            src="/news_001.png"
+            alt="news 001"
+            className={styles.news_image}
+            ref={newsImage1Ref}
+          />
+          <img
+            src="/news_002.png"
+            alt="news 002"
+            className={styles.news_image}
+            ref={newsImage2Ref}
+          />
+          <img
+            src="/news_003.png"
+            alt="news 003"
+            className={styles.news_image}
+            ref={newsImage3Ref}
+          />
+        </div>
+  
+        <p className={styles.news_question}>알고 계셨나요?</p>
+      </div>
+      <div className={styles.contest_coin_wrapper}>
+        <div className={styles.contest_text_wrapper}>
+          <div className={styles.contest_notice_icon} />
+          <p className={styles.contest_notice_subtitle}>아래 중 하나라도 해당되시는 분들은</p>
+          <p className={styles.contest_notice_title}>모르면 손해입니다</p>
+        </div>
+        <div className={styles.contest_coin_images_wrapper}>
+          <img
+            src="/coin_001.png"
+            alt="coin notice 1"
+            className={styles.contest_coin_image}
+            ref={contestCoinImage1Ref}
+          />
+          <img
+            src="/coin_002.png"
+            alt="coin notice 2"
+            className={styles.contest_coin_image}
+            ref={contestCoinImage2Ref}
+          />
+          <img
+            src="/coin_003.png"
+            alt="coin notice 3"
+            className={styles.contest_coin_image}
+            ref={contestCoinImage3Ref}
+          />
+        </div>
+        <div className={styles.news_divider}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="4"
+            height="28"
+            viewBox="0 0 4 28"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle cx="2" cy="2" r="2" fill="white" />
+            <circle cx="2" cy="14" r="2" fill="white" />
+            <circle cx="2" cy="26" r="2" fill="white" />
+          </svg>
+        </div>
+        <p className={styles.contest_interest_text}>
+          이 상태로 1년만 가도,<br/> <span className={styles.contest_interest_highlight}>수백만원의 이자</span>를 더 내시게됩니다.
+        </p>
+      </div>
+      
       <div ref={contentsSectionRef} className={styles.contents_section}>
         <img
           src="/contents_001.png"
@@ -498,71 +588,13 @@ export default function Home() {
           className={styles.contents_image}
         />
       </div>
-      <div
-        ref={contentsSectionBlueRef}
-        className={styles.contents_section_blue}
-      >
-        <p ref={contentsTextRef} className={styles.contents_text}>
-          이런 대표님들 모두
-        </p>
-        <p ref={contentsButtonRef} className={styles.contents_button}>
-          정책자금 확보 가능합니다
-        </p>
-        <div className={styles.contents_images}>
-          <img
-            ref={contentsImage1Ref}
-            src="/contents_01_001.png"
-            alt="contents 01"
-            className={styles.contents_image_slot}
-          />
-          <img
-            ref={contentsImage2Ref}
-            src="/contents_01_002.png"
-            alt="contents 02"
-            className={styles.contents_image_slot}
-          />
-          <img
-            ref={contentsImage3Ref}
-            src="/contents_01_003.png"
-            alt="contents 03"
-            className={styles.contents_image_slot}
-          />
-        </div>
-      </div>
+      
+    
       <div
         ref={contentsIconsWrapperRef}
         className={styles.contents_icons_wrapper}
       >
-        <p className={styles.contents_subtitle}>
-          한평생 바로기업에서 모두 찾아드립니다.
-        </p>
-        <h2 className={styles.contents_main_title}>
-          대표님들이 바로기업을 찾는 이유
-        </h2>
-        <div className={styles.contents_content_wrapper}>
-          <div className={styles.contents_images_wrapper}>
-            <img
-              src="/contents_02_001.png"
-              alt="높은 승인률"
-              className={styles.contents_icon}
-            />
-            <img
-              src="/contents_02_002.png"
-              alt="빠른 처리"
-              className={styles.contents_icon}
-            />
-            <img
-              src="/contents_02_003.png"
-              alt="정확한 컨설팅"
-              className={styles.contents_icon}
-            />
-            <img
-              src="/contents_02_004.png"
-              alt="최대 혜택"
-              className={styles.contents_icon}
-            />
-          </div>
-        </div>
+       <img src="/contents_002.png" alt="contents" className={styles.contents_image} />
       </div>
       <div ref={newSectionRef} className={styles.new_section}>
         <div className={styles.star_image}></div>
@@ -659,22 +691,24 @@ export default function Home() {
         </Swiper>
       </div>
       <footer ref={footerRef} className={styles.footer}>
-        <h2 className={styles.footer_title}>
-          START UP,
-          <br />
-          시작부터 성장까지
-        </h2>
+        <div className={styles.footer_text_wrapper}>
+          <p className={styles.footer_text_small}>지금 대출 상태만 간단히 점검받으세요</p>
+          <p className={styles.footer_text_main}>
+            1분만 투자<span className={styles.footer_text_sub}>하시면</span>,<br /><span className={styles.footer_text_sub}>지금부터</span> 절약할 수 있습니다
+          </p>
+        
+        </div>
         <button
           className={styles.footer_button}
-          onClick={() => handleOpenModal("랜딩페이지-9740")}
+          onClick={() => handleOpenModal("소상공인_이자")}
         >
-          무료상담 신청하기
+          지금 대출상태 무료점검 받기
         </button>
       </footer>
       {showFloatingBanner && (
         <div className={styles.floating_banner}>
           <button onClick={scrollToFooter} className={styles.floating_button}>
-            무료상담 신청하기
+          지금 대출상태 무료점검 받기
           </button>
         </div>
       )}
