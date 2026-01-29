@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import styles from "./page.module.css";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [showFloatingBanner, setShowFloatingBanner] = useState(true);
@@ -920,6 +921,7 @@ export default function Home() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
